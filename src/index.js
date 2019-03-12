@@ -32,7 +32,7 @@ module.exports = function check(str, bracketsConfig) {
               }*/
               
           } 
-         if (str[i]!==newStr[j]){
+         if (str[i]==newStr[j+newStr.length/2]){
              for(let k=0;k<newStr.length/2;k++){
                if(str[i]==newStr[k+newStr.length/2] && str[i-1]==newStr[k]){
                   //alert(str[i-1]+''+str[i]); 
