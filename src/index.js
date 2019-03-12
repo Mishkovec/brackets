@@ -27,9 +27,9 @@ module.exports = function check(str, bracketsConfig) {
            //alert(newStr[j]+''+newStr[j+newStr.length/2])
           if(str[i]==newStr[j]){
               stack.push(str[i]);
-             /* if(newStr[j]==newStr[j+newStr.length/2]){
+             if(newStr[j]==newStr[j+newStr.length/2]){
                   stack.pop();
-              }*/
+              }
               
           }
         if (str[i]!==newStr[j]){
