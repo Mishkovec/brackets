@@ -25,11 +25,11 @@ module.exports = function check(str, bracketsConfig) {
     for (let i=0;i<str.length;i++){
        for(let j=0;j<newStr.length/2;j++){
            //alert(newStr[j]+''+newStr[j+newStr.length/2])
-          /*if(str[i]==newStr[j]){
-              stack.push(str[i]);*/
-              if(newStr[j]==newStr[j+newStr.length/2]){
+          if(str[i]==newStr[j]){
+              stack.push(str[i]);
+             /* if(newStr[j]==newStr[j+newStr.length/2]){
                   stack.pop();
-              }
+              }*/
               
           } 
          if (str[i]!==newStr[j]){
