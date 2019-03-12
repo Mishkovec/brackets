@@ -21,15 +21,16 @@ module.exports = function check(str, bracketsConfig) {
     var newStr=strOpen+strClose;
    // alert(newStr);
     if(newStr.length>8){
-       let stack=[];
+     let stack=[];
     for (let i=0;i<str.length;i++){
        for(let j=0;j<newStr.length/2;j++){
            //alert(newStr[j]+''+newStr[j+newStr.length/2])
           if(str[i]==newStr[j]){
               stack.push(str[i]);
-                           
-          }
-        if (str[i]!==newStr[j]){
+             
+          } 
+         
+          if (str[i]==newStr[j+newStr.length/2]){
              for(let k=0;k<newStr.length/2;k++){
                if(str[i]==newStr[k+newStr.length/2] && str[i-1]==newStr[k]){
                   //alert(str[i-1]+''+str[i]); 
@@ -38,47 +39,51 @@ module.exports = function check(str, bracketsConfig) {
              }
           }
        }
-    } 
     }
-    if(newStr.length<8){
-      let stack=[];
-    for (let i=0;i<str.length;i++){
-       for(let j=0;j<newStr.length/2;j++){
-           //alert(newStr[j]+''+newStr[j+newStr.length/2])
-          if(str[i]==newStr[j]){
-              stack.push(str[i]);
-             if(newStr[j]==newStr[j+newStr.length/2]){
-                  stack.pop();
-              }
-              
-          }
-        if (str[i]!==newStr[j]){
-             for(let k=0;k<newStr.length/2;k++){
-               if(str[i]==newStr[k+newStr.length/2] && str[i-1]==newStr[k]){
-                  //alert(str[i-1]+''+str[i]); 
-                  stack.pop();
-               } 
-             }
-          }
-         if (str[i]==newStr[j+newStr.length/2]){
-             for(let k=0;k<newStr.length/2;k++){
-               if(str[i]==newStr[k+newStr.length/2] && str[i-1]==newStr[k]){
-                  //alert(str[i-1]+''+str[i]); 
-                  stack.pop();
-               } 
-             }
-          }
-       }
-    }  
-    }
-     
-       
-    
-    //alert(stack);
     if(stack.length>0){
         return false;
     }
     else { return true;
         
+    }
+       
+    }
+    if(newStr.length<8){
+     let stack=[];
+    for (let i=0;i<str.length;i++){
+       for(let j=0;j<newStr.length/2;j++){
+           //alert(newStr[j]+''+newStr[j+newStr.length/2])
+          if(str[i]==newStr[j]){
+              stack.push(str[i]);
+              if(newStr[j]==newStr[j+newStr.length/2]){
+                  stack.pop();
+              }
+              
+          } 
+         if (str[i]!==newStr[j]){
+             for(let k=0;k<newStr.length/2;k++){
+               if(str[i]==newStr[k+newStr.length/2] && str[i-1]==newStr[k]){
+                  //alert(str[i-1]+''+str[i]); 
+                  stack.pop();
+               } 
+             }
+          }
+          if (str[i]==newStr[j+newStr.length/2]){
+             for(let k=0;k<newStr.length/2;k++){
+               if(str[i]==newStr[k+newStr.length/2] && str[i-1]==newStr[k]){
+                  //alert(str[i-1]+''+str[i]); 
+                  stack.pop();
+               } 
+             }
+          }
+       }
+    }
+    if(stack.length>0){
+        return false;
+    }
+    else { return true;
+        
+    }
+       
     }
 }
