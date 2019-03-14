@@ -55,16 +55,12 @@ module.exports = function check(str, bracketsConfig) {
            //alert(newStr[j]+''+newStr[j+newStr.length/2])
           if(str[i]==newStr[j]){
               stack.push(str[i]);
-              /*if(newStr[j]==newStr[j+newStr.length/2]){
+              if(newStr[j]==newStr[j+newStr.length/2]){
                   stack.pop();
-              }*/
+              }
               
           } 
-          if(str[i-1]==newStr[j+newStr.length/2] && str[i]==newStr[j]){
-                  
-                      //alert(str[i-1]+''+str[i]); 
-                      //return false;
-                  }
+          
          if (str[i]!==newStr[j]){
              for(let k=0;k<newStr.length/2;k++){
                if(str[i]==newStr[k+newStr.length/2] && str[i-1]==newStr[k]){
@@ -103,4 +99,5 @@ module.exports = function check(str, bracketsConfig) {
     }
        
     }
+    
 }
